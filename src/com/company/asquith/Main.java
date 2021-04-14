@@ -28,22 +28,19 @@ class Queue<E> {
             throw new StackEmptyException();
         }
 
-        E returnElement = elements[size - 1];
-        size--;
-        index--;
+        E returnElement = elements[index - size];
+        index++;
         return returnElement;
     }
 }
 
 public class Main {
     public static void main(String[] agrs) {
-        Queue<String> strings = new Queue<>(4);
+        Queue<String> strings = new Queue<>(3);
         try {
-            strings.enqueue("Hello");
-            strings.enqueue("World, ");
-            strings.enqueue("What's");
-            strings.enqueue("Up.");
-            System.out.println(strings.dequeue());
+            strings.enqueue("1");
+            strings.enqueue("2");
+            strings.enqueue("3");
             System.out.println(strings.dequeue());
             System.out.println(strings.dequeue());
             System.out.println(strings.dequeue());
